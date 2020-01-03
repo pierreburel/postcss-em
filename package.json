@@ -1,6 +1,6 @@
 {
   "name": "postcss-em",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "PostCSS plugin to convert px in em.",
   "keywords": [
     "postcss",
@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/pierreburel/postcss-em",
   "dependencies": {
-    "postcss": "^7.0.6"
+    "postcss": "^7.0.26"
   },
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^24.9.0"
   },
   "scripts": {
     "test": "jest"

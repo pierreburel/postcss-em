@@ -2,9 +2,11 @@
 
 [PostCSS] plugin to convert px in em. Based on [sass-em](https://github.com/pierreburel/sass-em).
 
-[PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/pierreburel/postcss-em.svg
-[ci]:      https://travis-ci.org/pierreburel/postcss-em
+See also [postcss-rem](https://github.com/pierreburel/postcss-rem) & [startijenn-rem](https://github.com/pierreburel/startijenn-rem).
+
+[postcss]: https://github.com/postcss/postcss
+[ci-img]: https://travis-ci.org/pierreburel/postcss-em.svg
+[ci]: https://travis-ci.org/pierreburel/postcss-em
 
 ## How it works
 
@@ -19,9 +21,13 @@ There can be multiple comma-separated values (eg. multiple box shadow), but the 
 .demo {
   font-size: em(24px, 16px); /* Simple */
   padding: em(5px 10px, 24px); /* Multiple values */
-  margin: em(10px .5em, 24px); /* Existing em value */
+  margin: em(10px 0.5em, 24px); /* Existing em value */
   border-bottom: em(1px solid black, 24px); /* Multiple mixed values */
-  box-shadow: em(0 0 2px #ccc, inset 0 0 5px #eee, 24px); /* Comma-separated values */
+  box-shadow: em(
+    0 0 2px #ccc,
+    inset 0 0 5px #eee,
+    24px
+  ); /* Comma-separated values */
   text-shadow: em(1px 1px, 24px) #eee, em(-1px, 24px) 0 #eee; /* Alternate use */
 }
 ```
@@ -32,7 +38,7 @@ There can be multiple comma-separated values (eg. multiple box shadow), but the 
 .demo {
   font-size: 1.5em; /* Simple */
   padding: 0.20833em 0.41666em; /* Multiple values */
-  margin: 0.41666em .5em; /* Existing em value */
+  margin: 0.41666em 0.5em; /* Existing em value */
   border-bottom: 0.04166em solid black; /* Multiple mixed values */
   box-shadow: 0 0 0.08333em #ccc, inset 0 0 0.20833em #eee; /* Comma-separated values */
   text-shadow: 0.04166em 0.04166em #eee, -0.04166em 0 #eee; /* Alternate use */
@@ -44,7 +50,7 @@ There can be multiple comma-separated values (eg. multiple box shadow), but the 
 Install with `npm i postcss-em` and use with [PostCSS]:
 
 ```js
-postcss([ require('postcss-em') ])
+postcss([require("postcss-em")]);
 ```
 
 Example with custom options:
@@ -52,6 +58,7 @@ Example with custom options:
 ```js
 postcss([ require('postcss-em')({
   precision: 6      // Default to 5
+  name: 'to-em' // Default to em
 }) ])
 ```
 

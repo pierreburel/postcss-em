@@ -46,3 +46,11 @@ it('Changing precision', () => run(
         precision: 3
     }
 ));
+
+it('Changing name', () => run(
+    '.name { font-size: to-em(24px, 16px); }',
+    '.name { font-size: 1.5em; }',
+    {
+        name: 'to-em'
+    }
+));

@@ -1,12 +1,10 @@
-# PostCSS EM [![Build Status][ci-img]][ci]
+# postcss-em [![Node.js CI](https://github.com/pierreburel/postcss-em/actions/workflows/node.js.yml/badge.svg)](https://github.com/pierreburel/postcss-em/actions/workflows/node.js.yml)
 
 [PostCSS] plugin to convert px in em. Based on [sass-em](https://github.com/pierreburel/sass-em).
 
 See also [postcss-rem](https://github.com/pierreburel/postcss-rem) & [startijenn-rem](https://github.com/pierreburel/startijenn-rem).
 
 [postcss]: https://github.com/postcss/postcss
-[ci-img]: https://travis-ci.org/pierreburel/postcss-em.svg
-[ci]: https://travis-ci.org/pierreburel/postcss-em
 
 ## How it works
 

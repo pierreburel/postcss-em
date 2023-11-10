@@ -1,5 +1,5 @@
 const defaults = {
-  name: 'em',
+  name: 'em-convert',
   precision: 5
 };
 

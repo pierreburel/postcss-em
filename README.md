@@ -2,13 +2,13 @@
 
 [PostCSS] plugin to convert px in em. Based on [sass-em](https://github.com/pierreburel/sass-em).
 
-See also [postcss-rem](https://github.com/pierreburel/postcss-rem) & [startijenn-rem](https://github.com/pierreburel/startijenn-rem).
+**Breaking change in 3.0**: changed default function name to `em-convert` to match [postcss-rem](https://github.com/pierreburel/postcss-rem), as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem).
 
 [postcss]: https://github.com/postcss/postcss
 
 ## How it works
 
-The plugin provides a `em()` function which takes at least 2 parameters: the value (px, mixed) and the context (px).
+The plugin provides a `em-convert()` function which takes at least 2 parameters: the value (px, mixed) and the context (px).
 There can be multiple comma-separated values (eg. multiple box shadow), but the last parameter must be the context.
 
 ## Example
@@ -17,16 +17,16 @@ There can be multiple comma-separated values (eg. multiple box shadow), but the 
 
 ```scss
 .demo {
-  font-size: em(24px, 16px); /* Simple */
-  padding: em(5px 10px, 24px); /* Multiple values */
-  margin: em(10px 0.5em, 24px); /* Existing em value */
-  border-bottom: em(1px solid black, 24px); /* Multiple mixed values */
-  box-shadow: em(
+  font-size: em-convert(24px, 16px); /* Simple */
+  padding: em-convert(5px 10px, 24px); /* Multiple values */
+  margin: em-convert(10px 0.5em, 24px); /* Existing em value */
+  border-bottom: em-convert(1px solid black, 24px); /* Multiple mixed values */
+  box-shadow: em-convert(
     0 0 2px #ccc,
     inset 0 0 5px #eee,
     24px
   ); /* Comma-separated values */
-  text-shadow: em(1px 1px, 24px) #eee, em(-1px, 24px) 0 #eee; /* Alternate use */
+  text-shadow: em-convert(1px 1px, 24px) #eee, em-convert(-1px, 24px) 0 #eee; /* Alternate use */
 }
 ```
 
@@ -55,8 +55,8 @@ Example with custom options:
 
 ```js
 postcss([ require('postcss-em')({
-  precision: 6      // Default to 5
-  name: 'to-em' // Default to em
+  precision: 6       // Default to 5
+  name: 'convert-em' // Default to 'em-convert'
 }) ])
 ```
 

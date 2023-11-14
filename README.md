@@ -2,7 +2,7 @@
 
 [PostCSS] plugin to convert px in em. Based on [sass-em](https://github.com/pierreburel/sass-em).
 
-**Breaking change in 3.0**: changed default function name to `em-convert` to match [postcss-rem](https://github.com/pierreburel/postcss-rem), as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem).
+**Breaking change in 3.0**: changed default function name to `em-convert` to match [postcss-rem](https://github.com/pierreburel/postcss-rem), as [CSS now use `rem()` for calculating the remainder](https://developer.mozilla.org/en-US/docs/Web/CSS/rem). You can revert back by setting `name` option to `'em'` (see [usage](#usage)).
 
 [postcss]: https://github.com/postcss/postcss
 
